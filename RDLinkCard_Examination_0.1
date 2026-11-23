@@ -1,0 +1,38 @@
+// ==UserScript==
+// @name        RDLinkCard Examination 🔵
+// @namespace        http://tampermonkey.net/
+// @version        0.1
+// @description        リダイレクト用リンクからGitHubのリダイレクト元リポジトリを開く「Shift+左Click」
+// @author        GitHub User & Ameba Blog User
+// @match        https://ameblo.jp/*
+// @icon        https://www.google.com/s2/favicons?sz=64&domain=ameba.jp
+// @noframes
+// @grant        none
+// @updateURL        https://github.com/personwritep/RDLinkCard_Examination/raw/main/RDLinkCard_Examination.user.js
+// @downloadURL        https://github.com/personwritep/RDLinkCard_Examination/raw/main/RDLinkCard_Examination.user.js
+// ==/UserScript==
+
+
+
+document.addEventListener('click', open_repo);
+
+function open_repo(event){
+    if(event.shiftKey){ // リダイレクトするa要素の「Shift+左Click」
+        event.preventDefault();
+        let elem=event.target.closest('a');
+        if(elem){
+            let link_href=elem.getAttribute('href');
+            if(link_href && link_href.includes('github.io')){ // Github Pages のリンクが条件
+                let parts=link_href.split('/');
+                let user=parts[2].replace('.github.io', '');
+                let repo=parts[3];
+
+                let repo_main='https://github.com/'+ user +'/'+ repo;
+                let subWin=window.open(repo_main, '_blank'); }
+            else{
+               alert("⛔「Github Pages」のリンクではないので処理できません"); }
+
+        }}
+
+} // open_repo()
+
