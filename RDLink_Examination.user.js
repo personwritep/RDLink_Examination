@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        RDLinkCard Examination 🔵
+// @name        RDLink Examination 🔵
 // @namespace        http://tampermonkey.net/
 // @version        0.1
 // @description        リダイレクト用リンクからGitHubのリダイレクト元リポジトリを開く「Shift+左Click」
@@ -8,8 +8,8 @@
 // @icon        https://www.google.com/s2/favicons?sz=64&domain=ameba.jp
 // @noframes
 // @grant        none
-// @updateURL        https://github.com/personwritep/RDLinkCard_Examination/raw/main/RDLinkCard_Examination.user.js
-// @downloadURL        https://github.com/personwritep/RDLinkCard_Examination/raw/main/RDLinkCard_Examination.user.js
+// @updateURL        https://github.com/personwritep/RDLink_Examination/raw/main/RDLink_Examination.user.js
+// @downloadURL        https://github.com/personwritep/RDLink_Examination/raw/main/RDLink_Examination.user.js
 // ==/UserScript==
 
 
